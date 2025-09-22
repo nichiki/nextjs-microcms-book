@@ -6,11 +6,15 @@ import styles from "./page.module.css";
 
 type Props = {
     params: Promise<{ slug: string }>;
+    searchParams: Promise<{ dk?: string }>;
 }
 
-export default async function Page({ params }: Props) {
+export default async function Page({ params, searchParams }: Props) {
     const { slug } =  await params;
-    const data = await getNewsDetail(slug).catch(notFound);
+    const { dk } = await searchParams;
+    const data = await getNewsDetail(slug, {
+        draftKey: dk,
+    }).catch(notFound);
 
     return (
         <>
