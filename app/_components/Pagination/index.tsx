@@ -20,7 +20,7 @@ export default function Pagination({totalCount, current = 1, basePath = "/news"}
                 {pages.map((p) => (
                     <li className={styles.list} key={p}>
                         {current !== p ? (
-                            <Link href={`/${basePath}/p/${p}`} className={styles.item}>
+                            <Link href={`${basePath}/p/${p}`} className={styles.item}>
                                 {p}
                             </Link>
                         ) : (
