@@ -5,7 +5,7 @@ function validateEmail(email: string) {
     return pattern.test(email);
 }
 
-export async function createContactData(_prevState: any, formData: FormData) {
+export async function createContactData(_prevState: unknown, formData: FormData) {
     const rawFormData = {
         lastname: formData.get("lastname") as string,
         firstname: formData.get("firstname") as string,
